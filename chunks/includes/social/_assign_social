@@ -1,0 +1,3 @@
+        case '[[post-type]]':
+            $social['description'] = get_the_excerpt($post->ID);
+            break;

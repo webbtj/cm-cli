@@ -1,0 +1,17 @@
+                {if $filter_[[taxonomy-slug]]}
+                    <div class="box med-1of3">
+                        <label for="[[taxonomy-slug]]">{$t.Filter_by_Tag}</label>
+                        <div class="select-wrapper">
+                            <select id="[[taxonomy-slug]]">
+                                <option value="">{$t.All}</option>
+                                {foreach from=$filter_[[taxonomy-slug]] item=tag}
+                                    {if $tag->selected}
+                                        <option selected value="{$tag->slug}">{$tag->name}</option>
+                                    {else}
+                                        <option value="{$tag->slug}">{$tag->name}</option>
+                                    {/if}
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                {/if}

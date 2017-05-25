@@ -1,0 +1,8 @@
+    $menu = wp_nav_menu(array(
+        'theme_location' => '[[menu-slug]]',
+        'echo' => false,
+        'menu_class' => '[[menu-slug]]-menu-class',
+        'menu_id' => '[[menu-slug]]',
+        'container' => 0
+    ));
+    $wp_smarty->assign('menu_[[menu-slug]]', $menu);

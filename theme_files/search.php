@@ -22,12 +22,6 @@ while(have_posts()){
 
 $smarty->assign('posts', $output);
 
-$header_image = get_field('page_header', 'options');
-$smarty->assign('header_image', $header_image);
-
-$no_search_results = get_field('no_search_results', 'options');
-$smarty->assign('no_search_results', $no_search_results);
-
 get_header();
 
 $smarty->display('pages/search.tpl');

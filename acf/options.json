@@ -1,0 +1,188 @@
+[
+    {
+        "key": "group_591077c932c69",
+        "title": "Options",
+        "fields": [
+            {
+                "key": "field_5911ce9adeda2",
+                "label": "Contact",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_591313bfbb133",
+                "label": "Contact Title",
+                "name": "contact_title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5913145a046db",
+                "label": "Address Title",
+                "name": "address_title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_591313cbbb134",
+                "label": "Contact Address",
+                "name": "contact_address",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_5913159c8aba3",
+                "label": "Footer",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_591315e78aba5",
+                "label": "Privacy Policy Page",
+                "name": "privacy_policy_page",
+                "type": "post_object",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [],
+                "taxonomy": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "return_format": "object",
+                "ui": 1
+            },
+            {
+                "key": "field_5915a622c0b52",
+                "label": "Errors",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5915a650c0b53",
+                "label": "404 Title",
+                "name": "404_title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5915a65dc0b54",
+                "label": "404 Content",
+                "name": "404_content",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

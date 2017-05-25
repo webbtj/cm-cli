@@ -1,0 +1,4 @@
+$args = array(
+    'post_type' => '[[post-type]]',
+    'paged' => 1
+);

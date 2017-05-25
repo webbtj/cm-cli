@@ -8,7 +8,7 @@ class CM_CLI_Helper{
     			if($file === '.' || $file === '..'){
     				//do nothing
     			}elseif(is_file($dir . '/' . $file)){
-    				copy("$dir/$file", "$destination/$file");
+    				CM_CLI_Helper::copy("$dir/$file", "$destination/$file");
     			}else{
     				mkdir("$destination/$file");
     				CM_CLI_Helper::directory_builder("$dir/$file", "$destination/$file");
@@ -27,12 +27,37 @@ class CM_CLI_Helper{
     	$rewards[] = "a fried shrimp! 🍤";
     	$rewards[] = "a roasted sweet potatoe! 🍠";
     	$rewards[] = "fries! 🍟";
-    	$rewards[] = "spaghetti! 🍝";
+    	$rewards[] = "(mom's) spaghetti! 🍝";
     	$rewards[] = "rice! 🍚";
     	$rewards[] = "a drumstick! 🍗";
     	$rewards[] = "a beer! 🍺";
     	$rewards[] = "two beer! 🍻";
     	$rewards[] = "meat! 🍖";
     	return "All Done! Good Work! You deserve " . $rewards[mt_rand(0,14)];
+    }
+
+    public static function copy($source, $destination){
+        global $chunker;
+
+        $contents = file_get_contents($source);
+        $contents = $chunker->replacer($contents);
+
+        $basename = basename($source);
+        if($basename === 'style.css'){
+            $contents = CM_CLI_Helper::prepare_theme_meta($contents);
+        }
+        $contents = $chunker->chunk($source, $contents);
+
+        file_put_contents($destination, $contents);
+    }
+
+    public function prepare_theme_meta($contents){
+        global $template_vars;
+
+        foreach($template_vars as $key => $value){
+            $contents = str_replace("[[$key]]", $value, $contents);
+        }
+
+        return $contents;
     }
 }

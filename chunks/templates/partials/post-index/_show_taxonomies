@@ -1,0 +1,11 @@
+            {if $post->[[taxonomy-slug]]}
+                <span>
+                    {foreach from=$post->[[taxonomy-slug]] item=tag}
+                        {if $index_page_url}
+                            <a href="{$index_page_url}?[[taxonomy-slug]]={$tag->slug}" title="{$tag->name}">{$tag->name}</a>
+                        {else}
+                            <a href="?[[taxonomy-slug]]={$tag->slug}" title="{$tag->name}">{$tag->name}</a>
+                        {/if}
+                    {/foreach}
+                </span>
+            {/if}

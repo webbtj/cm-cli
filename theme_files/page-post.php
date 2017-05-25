@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: News Index
+ * Template Name: [[post-name]] Index
  */
 
 global $post;
@@ -13,26 +13,9 @@ $content = apply_filters('the_content', $post->post_content);
 
 $smarty->assign('content', $content);
 
-$header_image = get_field('header_image');
-if(!$header_image){
-    $header_image = get_field('page_header', 'options');
-}
-$smarty->assign('header_image', $header_image);
+//--Get Post Args
 
-$args = array(
-    'post_type' => 'post',
-    'paged' => 1
-);
-
-if($_GET['tag']){
-    $args['tax_query'] = array(
-        array(
-            'taxonomy' => 'post_tag',
-            'field'    => 'slug',
-            'terms'    => $_GET['tag'],
-        ),
-    );
-}
+//--Taxonomy Query
 
 $posts = load_posts($args);
 $smarty->assign('posts', $posts);
@@ -44,9 +27,11 @@ $smarty->assign('has_more', $has_more);
 $smarty->assign('index_page_url', get_permalink());
 
 $smarty->assign('months', get_months());
-$smarty->assign('years', get_years('post'));
-$smarty->assign('filter_tags', get_post_terms('post_tag'));
-$smarty->assign('post_type', 'post');
+//--Get Post Years
+
+//--Assign Taxonomy Filters
+
+//--Assign Post Type
 
 get_header();
 

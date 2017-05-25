@@ -4,7 +4,7 @@
 
         <div class="box small-1of2 navigation__logo-wrapper">
             <a href="#" title="{$t.Go_to_the_CFNU_Landing_Page}" class="navigation__logo-link">
-                <img src="/mockup/assets/img/{$t.logo_horizontal_png}" alt="{$t.The_CFNU_Logo}" class="navigation__logo">
+                <img src="http://placehold.it/256x256" alt="{$t.Logo_Alt}" class="navigation__logo">
             </a>
         </div>
 
@@ -16,7 +16,6 @@
                     {/if}
                 {/foreach}
             {/if}
-            <!-- NOREX-NOTE: THIS NEEDS TO BE STYLED -->
             <form method="get" action="/">
                 <input type="text" name="s" class="navigation__search-input">
                 <a href="#" title="{$t.Search}" id="search-anchor" class="navigation__search-submit"><i class="ionicons ion-ios-search"></i></a>

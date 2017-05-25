@@ -1,27 +1,24 @@
 <!-- Footer ======================================================== -->
-<footer style="background-image: url('/mockup/assets/img/texture_footer.png')">
+<footer>
 
     <div class="contact__title-wrapper">
 
         <div class="page-container">
-            <h1 class="heading--01 contact__title">{$contact_title}</h1>
+            <h1>{$contact_title}</h1>
         </div>
 
     </div>
 
-    <div class="page-container flex-grid contact__wrapper">
+    <div class="page-container flex-grid">
 
-        <div class="box lg-1of3 contact__copy-wrapper">
-            <h5 class="heading--05 contact__name">{$address_title}</h5>
-            <p class="contact__information">
+        <div class="box lg-1of3">
+            <h5>{$address_title}</h5>
+            <p>
                 {$contact_address}
             </p>
         </div>
 
-        <div class="box lg-2of3 contact__form">
-
-            <!-- NOREX-NOTE: STYLE THIS. -->
-            {$contact_form}
+        <div class="box lg-2of3">
 
         </div>
 
@@ -30,12 +27,6 @@
     <div class="copyright__wrapper">
 
         <div class="page-container">
-
-            {if $secure_link}
-                <a href="{$secure_link_url}" target="_blank" title="{$secure_link_name}" class="copyright__comodo-link">
-                    <img src="{$secure_link_image.url}" alt="{$secure_link_name}">
-                </a>
-            {/if}
 
             <span class="copyright__float">
                 <p>

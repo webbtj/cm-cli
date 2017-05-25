@@ -1,31 +1,28 @@
 <?php
 
-function do_translations(&$smarty){
+function cm_assign_translations(&$smarty){
     $translations = array(
         'All'                           => _x('All',                            'Theme', 'CFNU'),
         'Back'                          => _x('Back',                           'Theme', 'CFNU'),
         'Copyright'                     => _x('Copyright',                      'Theme', 'CFNU'),
-        'Download_Low_Res'              => _x('Download Low-Res',               'Theme', 'CFNU'),
-        'Download_Hi_Res'               => _x('Download Hi-Res',                'Theme', 'CFNU'),
         'Filter_by_Month'               => _x('Filter by Month',                'Theme', 'CFNU'),
         'Filter_by_Tag'                 => _x('Filter by Tag',                  'Theme', 'CFNU'),
         'Filter_by_Year'                => _x('Filter by Year',                 'Theme', 'CFNU'),
-        'Go_to_the_CFNU_Landing_Page'   => _x('Go to the CFNU Landing Page',    'Theme', 'CFNU'),
+        'Go_Landing_Page'               => _x('Go to Landing Page',             'Theme', 'CFNU'),
         'Load_More_Posts'               => _x('Load More Posts',                'Theme', 'CFNU'),
-        'logo_horizontal_white_png'     => _x('logo_horizontal_white.png',      'Theme', 'CFNU'),
-        'logo_horizontal_png'           => _x('logo_horizontal.png',            'Theme', 'CFNU'),
+        'Logo_Alt'                      => _x('Site Logo',                      'Theme', 'CFNU'),
         'More'                          => _x('More',                           'Theme', 'CFNU'),
+        'No_Results_Found'              => _x('No Results Found',               'Theme', 'CFNU'),
         'Read_More'                     => _x('Read More',                      'Theme', 'CFNU'),
         'Search'                        => _x('Search',                         'Theme', 'CFNU'),
-        'The_CFNU_Logo'                 => _x('The CFNU Logo',                  'Theme', 'CFNU'),
-        'Tweets_by'                     => _x('Tweets by',                      'Theme', 'CFNU'),
         'View_All'                      => _x('View All',                       'Theme', 'CFNU'),
+
     );
 
     $smarty->assign('t', $translations);
 }
 
-function translate_date($date){
+function cm_translate_date($date){
     $date = str_ireplace('January', __('January', 'CFNU'), $date);
     $date = str_ireplace('February', __('February', 'CFNU'), $date);
     $date = str_ireplace('March', __('March', 'CFNU'), $date);
@@ -48,4 +45,11 @@ function translate_date($date){
     $date = str_ireplace('Saturday', __('Saturday', 'CFNU'), $date);
 
     return $date;
+}
+
+function cm_assign_languages(&$smarty){
+    if(function_exists('icl_get_languages')){
+        $languages = icl_get_languages('skip_missing=0');
+        $wp_smarty->assign('languages', $languages);
+    }
 }

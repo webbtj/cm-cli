@@ -1,0 +1,1 @@
+require_once('post-types/[[post-type]].php');

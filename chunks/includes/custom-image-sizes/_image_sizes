@@ -1,0 +1,1 @@
+add_image_size('[[image-size-slug]]', [[image-size-width]], [[image-size-height]], [[image-size-crop]] );

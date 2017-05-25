@@ -1,0 +1,2 @@
+    $menu = array_values(get_nav_tree('[[menu-slug]]'));
+    $wp_smarty->assign('[[menu-slug]]', $menu);

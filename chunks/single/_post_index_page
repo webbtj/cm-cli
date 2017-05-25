@@ -1,0 +1,5 @@
+$index_page = get_page_by_template('[[index-page]].php');
+if($index_page && isset($index_page->ID)){
+    $index_page_url = get_permalink($index_page->ID);
+    $smarty->assign('index_page_url', $index_page_url);
+}

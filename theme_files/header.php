@@ -13,7 +13,7 @@
     <meta name="robots" content="noindex,follow" />
 
     <!-- Fonts ================================================== -->
-    <script src="https://use.typekit.net/zsr5cvx.js"></script>
+    <!-- <script src="//typekit"></script> -->
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <!-- Favicons ====================================================== -->

@@ -1,0 +1,1 @@
+            $p->[[taxonomy-slug]] = get_the_terms($p->ID, '[[taxonomy-slug]]');

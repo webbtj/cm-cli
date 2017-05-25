@@ -4,9 +4,6 @@ global $post;
 
 $smarty = wp_smarty();
 
-$header_image = get_field('page_header', 'options');
-$smarty->assign('header_image', $header_image);
-
 $title_404 = get_field('404_title', 'options');
 $smarty->assign('title', $title_404);
 

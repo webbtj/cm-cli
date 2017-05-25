@@ -144,7 +144,6 @@
 
     <div class="navigation--condensed__submenu" data-link-target="submenu-search">
         <div class="navigation--condensed__submenu-close" data-link-handler="submenu-search"><i class="ionicons ion-android-close"></i>{$t.Back}</div>
-        <!-- NOREX-NOTE: THIS NEEDS TO BE STYLED -->
         <form method="get" action="/" class="navigation--condensed__search-form">
             <input type="text" name="s" class="navigation--condensed__search-input">
             <a href="#" title="{$t.Search}" id="search-anchor-mobile" class="navigation--condensed__search-submit button--blue--small"><i class="ionicons ion-ios-search"></i> Search</a>
