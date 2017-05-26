@@ -38,7 +38,7 @@ function wp_smarty(){
     $wp_smarty->assign('stylesheet_directory', $stylesheet_directory);
 
     //Load Menus
-    cm_load_menus();
+    cm_load_menus($wp_smarty);
 
     $wp_smarty->assign('Y', date('Y'));
 

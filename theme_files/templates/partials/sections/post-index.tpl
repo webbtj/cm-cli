@@ -44,7 +44,7 @@
 
             <div id="posts">
 
-                {include file="partials/posts.tpl"}
+                {include file="partials/post-index.tpl"}
 
             </div>
 

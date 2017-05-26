@@ -35,6 +35,6 @@ $smarty->assign('months', get_months());
 
 get_header();
 
-$smarty->display('pages/page-post.tpl');
+$smarty->display('pages/page-[[post-type]].tpl');
 
 get_footer();

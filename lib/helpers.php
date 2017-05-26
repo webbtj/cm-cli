@@ -11,6 +11,9 @@ class CM_CLI_Helper{
     				CM_CLI_Helper::copy("$dir/$file", "$destination/$file");
     			}else{
     				mkdir("$destination/$file");
+                    if($file === 'templates_c' || $file === 'cache'){
+                        chmod("$destination/$file", 0777);
+                    }
     				CM_CLI_Helper::directory_builder("$dir/$file", "$destination/$file");
     			}
     		}
