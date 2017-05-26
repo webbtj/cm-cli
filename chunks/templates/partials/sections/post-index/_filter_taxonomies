@@ -1,6 +1,6 @@
                 {if $filter_[[taxonomy-slug]]}
                     <div class="box med-1of3">
-                        <label for="[[taxonomy-slug]]">{$t.Filter_by_Tag}</label>
+                        <label for="[[taxonomy-slug]]">{$t.Filter_by_[[taxonomy-slug]]}</label>
                         <div class="select-wrapper">
                             <select id="[[taxonomy-slug]]">
                                 <option value="">{$t.All}</option>

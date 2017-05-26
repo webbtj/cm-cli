@@ -31,7 +31,9 @@ class CM_CLI_Chunker{
     }
 
     public function replacer($contents){
+        global $theme_title;
         global $taxonomy_slug;
+        global $taxonomy_label;
         global $post_type;
         global $post_name;
         global $index_page;
@@ -42,7 +44,9 @@ class CM_CLI_Chunker{
         global $image_size_height;
         global $image_size_crop;
         $replace = array(
+            '[[theme-title]]' => $theme_title,
             '[[taxonomy-slug]]' => $taxonomy_slug,
+            '[[taxonomy-label]]' => $taxonomy_label,
             '[[post-type]]' => $post_type,
             '[[post-name]]' => $post_name,
             '[[index-page]]' => $index_page,

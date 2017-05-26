@@ -2,20 +2,21 @@
 
 function cm_assign_translations(&$smarty){
     $translations = array(
-        'All'                           => _x('All',                            'Theme', 'CFNU'),
-        'Back'                          => _x('Back',                           'Theme', 'CFNU'),
-        'Copyright'                     => _x('Copyright',                      'Theme', 'CFNU'),
-        'Filter_by_Month'               => _x('Filter by Month',                'Theme', 'CFNU'),
-        'Filter_by_Tag'                 => _x('Filter by Tag',                  'Theme', 'CFNU'),
-        'Filter_by_Year'                => _x('Filter by Year',                 'Theme', 'CFNU'),
-        'Go_Landing_Page'               => _x('Go to Landing Page',             'Theme', 'CFNU'),
-        'Load_More_Posts'               => _x('Load More Posts',                'Theme', 'CFNU'),
-        'Logo_Alt'                      => _x('Site Logo',                      'Theme', 'CFNU'),
-        'More'                          => _x('More',                           'Theme', 'CFNU'),
-        'No_Results_Found'              => _x('No Results Found',               'Theme', 'CFNU'),
-        'Read_More'                     => _x('Read More',                      'Theme', 'CFNU'),
-        'Search'                        => _x('Search',                         'Theme', 'CFNU'),
-        'View_All'                      => _x('View All',                       'Theme', 'CFNU'),
+        'All'                           => _x('All',                            'Theme', '[[theme-title]]'),
+        'Back'                          => _x('Back',                           'Theme', '[[theme-title]]'),
+        'Copyright'                     => _x('Copyright',                      'Theme', '[[theme-title]]'),
+        'Filter_by_Month'               => _x('Filter by Month',                'Theme', '[[theme-title]]'),
+        'Filter_by_Tag'                 => _x('Filter by Tag',                  'Theme', '[[theme-title]]'),
+        'Filter_by_Year'                => _x('Filter by Year',                 'Theme', '[[theme-title]]'),
+        'Go_Landing_Page'               => _x('Go to Landing Page',             'Theme', '[[theme-title]]'),
+        'Load_More_Posts'               => _x('Load More Posts',                'Theme', '[[theme-title]]'),
+        'Logo_Alt'                      => _x('Site Logo',                      'Theme', '[[theme-title]]'),
+        'More'                          => _x('More',                           'Theme', '[[theme-title]]'),
+        'No_Results_Found'              => _x('No Results Found',               'Theme', '[[theme-title]]'),
+        'Read_More'                     => _x('Read More',                      'Theme', '[[theme-title]]'),
+        'Search'                        => _x('Search',                         'Theme', '[[theme-title]]'),
+        'View_All'                      => _x('View All',                       'Theme', '[[theme-title]]'),
+        //--Taxonomy Filter Translations
 
     );
 

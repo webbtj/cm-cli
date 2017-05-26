@@ -26,7 +26,7 @@ class CM_CLI_Post{
 	 *
 	 * ## EXAMPLES
 	 *
-	 *     wp cm post event --label="Event"
+	 *     wp cm create-post event --label="Event"
 	 *
 	 * @when before_wp_load
 	 */

@@ -43,12 +43,12 @@ class CM_CLI_Helper{
         global $chunker;
 
         $contents = file_get_contents($source);
-        $contents = $chunker->replacer($contents);
 
         $basename = basename($source);
-        if($basename === 'style.css'){
+        if($basename === 'style.css' || $basename == 'translations.php'){
             $contents = CM_CLI_Helper::prepare_theme_meta($contents);
         }
+        $contents = $chunker->replacer($contents);
         $contents = $chunker->chunk($source, $contents);
 
         file_put_contents($destination, $contents);
