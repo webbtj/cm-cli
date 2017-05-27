@@ -11,4 +11,5 @@ $chunker = new CM_CLI_Chunker;
 
 require_once('lib/Post.php');
 require_once('lib/Taxonomy.php');
+require_once('lib/Menu.php');
 require_once('lib/Theme.php');

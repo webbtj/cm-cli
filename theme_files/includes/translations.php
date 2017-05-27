@@ -8,7 +8,7 @@ function cm_assign_translations(&$smarty){
         'Filter_by_Month'               => _x('Filter by Month',                'Theme', '[[theme-title]]'),
         'Filter_by_Tag'                 => _x('Filter by Tag',                  'Theme', '[[theme-title]]'),
         'Filter_by_Year'                => _x('Filter by Year',                 'Theme', '[[theme-title]]'),
-        'Go_Landing_Page'               => _x('Go to Landing Page',             'Theme', '[[theme-title]]'),
+        'Go_to_Landing_Page'            => _x('Go to Landing Page',             'Theme', '[[theme-title]]'),
         'Load_More_Posts'               => _x('Load More Posts',                'Theme', '[[theme-title]]'),
         'Logo_Alt'                      => _x('Site Logo',                      'Theme', '[[theme-title]]'),
         'More'                          => _x('More',                           'Theme', '[[theme-title]]'),

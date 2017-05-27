@@ -1,5 +1,5 @@
-    $nav_tree = get_nav_tree('main_menu');
+    $nav_tree = get_nav_tree('[[menu-slug]]');
     if(!empty($nav_tree)){
-        $menu = array_values(get_nav_tree('main_menu'));
-        $wp_smarty->assign('main_menu', $menu);
+        $menu = array_values(get_nav_tree('[[menu-slug]]'));
+        $wp_smarty->assign('[[menu-slug]]', $menu);
     }

@@ -63,4 +63,39 @@ class CM_CLI_Helper{
 
         return $contents;
     }
+
+    public static function get_active_theme(){
+        global $active_theme_dir;
+        $active_theme_dir = null;
+        $command_response = WP_CLI::runcommand(
+			'theme list --format=json',
+			array('return' => 'all')
+		);
+
+		$themes = json_decode($command_response->stdout);
+
+		if(!empty($themes)){
+            foreach($themes as $theme){
+                if($theme->status === 'active'){
+                    // do stuff here
+                    $command_response = WP_CLI::runcommand(
+        				'theme get ' . $theme->name . ' --fields=template_dir,title --format=json',
+        				array('return' => 'all')
+        			);
+                    $theme_fields = json_decode($command_response->stdout);
+                    if($theme_fields->template_dir){
+                        $active_theme_dir = $theme_fields->template_dir;
+                    }
+                }
+            }
+        }
+    }
+
+    public static function active_theme_dir(){
+        global $active_theme_dir;
+        if(!$active_theme_dir){
+            CM_CLI_Helper::get_active_theme();
+        }
+        return $active_theme_dir;
+    }
 }

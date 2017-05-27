@@ -3,7 +3,7 @@
     <div class="navigation__lead-wrapper flex-grid middle">
 
         <div class="box small-1of2 navigation__logo-wrapper">
-            <a href="#" title="{$t.Go_to_the_CFNU_Landing_Page}" class="navigation__logo-link">
+            <a href="#" title="{$t.Go_to_Landing_Page}" class="navigation__logo-link">
                 <img src="http://placehold.it/256x256" alt="{$t.Logo_Alt}" class="navigation__logo">
             </a>
         </div>
