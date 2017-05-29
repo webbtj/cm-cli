@@ -39,38 +39,6 @@ class CM_CLI_Menu{
             WP_CLI::success( "Menu $menu_name was created..." );
             WP_CLI::success( CM_CLI_Helper::reward() );
         }
-
-		// $command_response = WP_CLI::runcommand(
-		// 	'theme list --format=json',
-		// 	array('return' => 'all')
-		// );
-        //
-		// $themes = json_decode($command_response->stdout);
-        //
-		// if(!empty($themes)){
-        //     foreach($themes as $theme){
-        //         if($theme->status === 'active'){
-        //             // do stuff here
-        //             $command_response = WP_CLI::runcommand(
-        // 				'theme get ' . $theme->name . ' --fields=template_dir,title --format=json',
-        // 				array('return' => 'all')
-        // 			);
-        //             $theme_fields = json_decode($command_response->stdout);
-        //             if($theme_fields->template_dir){
-        //
-        //                 $destination = $theme_fields->template_dir;
-        //                 $file = "$destination/includes/menus.php";
-        //                 $content = $chunker->chunk($file, file_get_contents($file));
-        //                 file_put_contents($file, $content);
-        //             }
-        //
-        //
-        //             WP_CLI::success( "Menu $menu_name was created..." );
-    	// 			WP_CLI::success( CM_CLI_Helper::reward() );
-        //         }
-        //     }
-        //
-		// }
 	}
 
 	public function register_chunkables(){

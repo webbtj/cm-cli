@@ -18,7 +18,7 @@ class CM_CLI_Chunker{
 
         if($this->is_chunkable($source_file)){
             foreach($this->chunkables[$basename] as $chunker){
-                $chunk_content = $chunker['key'] . "\n" . file_get_contents(dirname(dirname(__FILE__)) . '/' . $chunker['file']);
+                $chunk_content = $chunker['key'] . "\n" . rtrim(file_get_contents(dirname(dirname(__FILE__)) . '/' . $chunker['file']));
                 $chunk_content = $this->replacer($chunk_content);
                 $source_content = str_replace($chunker['key'], $chunk_content, $source_content);
             }
