@@ -43,6 +43,8 @@ class CM_CLI_Chunker{
         global $image_size_width;
         global $image_size_height;
         global $image_size_crop;
+        global $custom_page_template_name;
+        global $custom_page_template_label;
         $replace = array(
             '[[theme-title]]' => $theme_title,
             '[[taxonomy-slug]]' => $taxonomy_slug,
@@ -56,6 +58,8 @@ class CM_CLI_Chunker{
             '[[image-size-width]]' => $image_size_width,
             '[[image-size-height]]' => $image_size_height,
             '[[image-size-crop]]' => $image_size_crop,
+            '[[custom-page-template-name]]' => $custom_page_template_name,
+            '[[custom-page-template-label]]' => $custom_page_template_label,
         );
 
         foreach($replace as $key => $value){
