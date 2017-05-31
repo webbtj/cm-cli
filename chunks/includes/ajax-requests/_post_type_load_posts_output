@@ -1,0 +1,4 @@
+        case '[[post-type]]':
+            $template_file = 'partials/post-index.tpl';
+            $index_file = 'page-[[post-type]].php';
+            break;

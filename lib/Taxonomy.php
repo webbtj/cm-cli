@@ -92,7 +92,9 @@ class CM_CLI_Taxonomy{
                         $destination = $theme_fields->template_dir;
                         //chunk existing files
                         $chunk_files = array(
+							'assets/js/app.js',
                             'functions.php',
+							'includes/ajax-requests.php',
                             'includes/helpers.php',
                             'includes/translations.php',
                             'templates/partials/sections/post-index.tpl',
@@ -137,10 +139,16 @@ class CM_CLI_Taxonomy{
         global $post_types;
         $post_types_array = explode(',', $post_types);
 
+		$chunker->register_chunkable('ajax-requests.php', '//--Taxonomy Load Posts Query', 'chunks/includes/ajax-requests/_taxonomy_load_posts_query');
+
+		$chunker->register_chunkable('app.js', '//--Taxonomy Ajax Property', 'chunks/assets/js/app/_taxonomy_ajax_property');
+		$chunker->register_chunkable('app.js', '//--Taxonomy Filter Trigger', 'chunks/assets/js/app/_taxonomy_filter_trigger');
+
         $chunker->register_chunkable('functions.php', '//--Register Taxonomies', 'chunks/functions/_register_taxonomies');
 
         foreach($post_types_array as $post_type){
             $chunker->register_chunkable('helpers.php', '//--Post Assign ' . $post_type . ' Taxonomy', 'chunks/includes/helpers/_post_assign_taxonomy');
+			$chunker->register_chunkable('helpers.php', '//--Taxonomy Filter Selected', 'chunks/includes/helpers/_taxonomy_filter_selected');
 
             $chunker->register_chunkable('page-' . $post_type . '.php', '//--Assign Taxonomy Filters', 'chunks/page-post/_assign_taxonomy_filters');
     		$chunker->register_chunkable('page-' . $post_type . '.php', '//--Taxonomy Query', 'chunks/page-post/_taxonomy_query');

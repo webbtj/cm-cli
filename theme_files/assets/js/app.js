@@ -13,9 +13,8 @@
                 'action' : 'load_posts'
             }
 
-            if($('#post-tag').val()){
-                data.tag = $('#post-tag').val();
-            }
+            //--Taxonomy Ajax Property
+
             if($('#post-year').val()){
                 data.year = $('#post-year').val();
             }
@@ -50,7 +49,9 @@
             e.preventDefault();
         });
 
-        $('#post-tag, #post-year, #post-month').on('change', function(e){
+        //--Taxonomy Filter Trigger
+
+        $('#post-month').on('change', function(e){
             $('#posts').empty();
             $('#post-page').val('0');
             load_posts();
@@ -59,6 +60,10 @@
 
         $('#post-year').on('change', function(e){
             check_month();
+            $('#posts').empty();
+            $('#post-page').val('0');
+            load_posts();
+            e.preventDefault();
         });
 
         $('#search-anchor, #search-anchor-mobile').on('click', function(e){

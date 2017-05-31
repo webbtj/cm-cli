@@ -1,1 +1,1 @@
-$smarty->assign('filter_[[taxonomy-slug]]', get_post_terms('[[taxonomy-slug]]'));
+$smarty->assign('filter_[[taxonomy-slug]]', get_post_terms('[[taxonomy-slug]]', '[[post-type]]'));

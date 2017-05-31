@@ -14,28 +14,12 @@ function load_posts_output(){
         'paged' => $page
     );
 
-    if($_GET['tag']){
-        switch ($type) {
-            case 'cfnu_international':
-                $taxonomy = 'international_tag';
-                break;
-            case 'cfnu_event':
-                $taxonomy = 'event_tag';
-                break;
-            case 'cfnu_research':
-                $taxonomy = 'research_tag';
-                break;
-            default:
-                $taxonomy = 'post_tag';
-                break;
-        }
-        $args['tax_query'] = array(
-    		array(
-    			'taxonomy' => $taxonomy,
-    			'field'    => 'slug',
-    			'terms'    => $_GET['tag'],
-    		),
-    	);
+    $args['tax_query'] = array();
+
+    //--Taxonomy Load Posts Query
+
+    if(empty($args['tax_query'])){
+        unset($args['tax_query']);
     }
 
     if($_GET['year']){
@@ -61,12 +45,6 @@ function load_posts_output(){
         }
     }
 
-    if($type == 'cfnu_campaign'){
-        global $campaign_page_ID;
-        $template_page = get_page_by_template('page-cfnu_campaign.php');
-        $campaign_page_ID = $template_page->ID;
-    }
-
     $posts = load_posts($args);
     $smarty->assign('posts', $posts);
 
@@ -78,26 +56,11 @@ function load_posts_output(){
     $index_file = 'page-post.php';
 
     switch($type){
-        case 'cfnu_campaign':
-            $template_file = 'partials/cfnu_campaigns.tpl';
-            $index_file = 'page-cfnu_campaign.php';
-            break;
-        case 'cfnu_research':
-            $template_file = 'partials/cfnu_research.tpl';
-            $index_file = 'page-cfnu_research.php';
-            break;
         case 'post':
-            $template_file = 'partials/posts.tpl';
+            $template_file = 'partials/post-index.tpl';
             $index_file = 'page-post.php';
             break;
-        case 'cfnu_international':
-            $template_file = 'partials/posts.tpl';
-            $index_file = 'page-cfnu_international.php';
-            break;
-        case 'cfnu_event':
-            $template_file = 'partials/posts.tpl';
-            $index_file = 'page-cfnu_event.php';
-            break;
+        //--Post Type Load Posts Output
     }
 
     $index_page = get_page_by_template($index_file);

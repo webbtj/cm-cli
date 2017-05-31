@@ -1,4 +1,7 @@
 if($_GET['[[taxonomy-slug]]']){
+    $selected_[[taxonomy-slug]] = $_GET['[[taxonomy-slug]]'];
+    $smarty->assign('selected_[[taxonomy-slug]]', $selected_[[taxonomy-slug]]);
+    
     $args['tax_query'] = array(
         array(
             'taxonomy' => '[[taxonomy-slug]]',

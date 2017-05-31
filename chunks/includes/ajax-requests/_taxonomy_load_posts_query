@@ -1,0 +1,9 @@
+    if($_GET['[[taxonomy-slug]]']){
+        $args['tax_query'][] = array(
+            array(
+                'taxonomy' => '[[taxonomy-slug]]',
+                'field'    => 'slug',
+                'terms'    => $_GET['[[taxonomy-slug]]'],
+            ),
+        );
+    }

@@ -45,6 +45,9 @@ class CM_CLI_OptimalSetup{
             }
         }
 
+        WP_CLI::runcommand("rewrite structure '/%postname%/'");
+        $messages[] = "Rewrite structure set to 'Post name'";
+
         if(!empty($messages)){
             WP_CLI::success( "The following operations were completed: " . implode(', ', $messages) );
         }

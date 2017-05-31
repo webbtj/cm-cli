@@ -1,0 +1,6 @@
+        $('#[[taxonomy-slug]]').on('change', function(e){
+            $('#posts').empty();
+            $('#post-page').val('0');
+            load_posts();
+            e.preventDefault();
+        });

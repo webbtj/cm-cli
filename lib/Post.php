@@ -77,7 +77,7 @@ class CM_CLI_Post{
                         CM_CLI_Helper::copy("$source/templates/pages/single-post.tpl", "$destination/templates/pages/single-$post_type.tpl");
                         CM_CLI_Helper::copy("$source/templates/pages/page-post.tpl", "$destination/templates/pages/page-$post_type.tpl");
                         //chunk existing files
-                        $chunk_files = array('functions.php', 'includes/helpers.php', 'includes/social.php');
+                        $chunk_files = array('functions.php', 'includes/helpers.php', 'includes/social.php', 'includes/ajax-requests.php');
                         foreach($chunk_files as $chunk_file){
                             $file = "$destination/$chunk_file";
                             $content = $chunker->chunk($file, file_get_contents($file));
@@ -95,6 +95,8 @@ class CM_CLI_Post{
 
 	public function register_chunkables(){
 		global $chunker;
+
+		$chunker->register_chunkable('ajax-requests.php', '//--Post Type Load Posts Output', 'chunks/includes/ajax-requests/_post_type_load_posts_output');
 
 		$chunker->register_chunkable('functions.php', '//--Register Post Types', 'chunks/functions/_register_post_type');
 

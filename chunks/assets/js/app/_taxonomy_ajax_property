@@ -1,0 +1,3 @@
+            if($('#[[taxonomy-slug]]').val()){
+                data.[[taxonomy-slug]] = $('#[[taxonomy-slug]]').val();
+            }

@@ -1,0 +1,3 @@
+        if(isset($_GET['[[taxonomy-slug]]']) && $post_type == '[[post-type]]' && $t->slug === $_GET['[[taxonomy-slug]]']){
+            $t->selected = true;
+        }

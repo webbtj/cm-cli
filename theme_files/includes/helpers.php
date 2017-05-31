@@ -29,13 +29,9 @@ function get_page_by_template($template_name, $suppress_filters = false){
 
 function get_post_terms($term){
     $terms = get_terms($term);
-    if(isset($_GET['tag'])){
-        foreach($terms as &$t){
-            $t->selected = false;
-            if($t->slug === $_GET['tag']){
-                $t->selected = true;
-            }
-        }
+    foreach($terms as &$t){
+        $t->selected = false;
+        //--Taxonomy Filter Selected
     }
     return $terms;
 }
