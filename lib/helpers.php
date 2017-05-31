@@ -136,7 +136,8 @@ class CM_CLI_Helper{
 
 			$connection->close();
 		}
-
-        WP_CLI::success( "Database '" . DB_NAME . "' and User '" . DB_PASSWORD . "' now exist (were created if required)" );
+        if($database && $username){
+            WP_CLI::success( "Database '$database' and User '$username' now exist (were created if required)" );
+        }
 	}
 }
