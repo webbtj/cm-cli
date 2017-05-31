@@ -47,7 +47,7 @@ class CM_CLI_Theme{
 	 *
 	 * ## EXAMPLES
 	 *
-	 *     wp cm theme twentyseventeen
+	 *     wp cm create-theme my_theme --theme-title="My Theme" --theme-uri="http://sitebynorex.com" --author-name="Norex" --author-uri="http://sitebynorex.com" --theme-description="A custom theme for a client"
 	 *
 	 * @when before_wp_load
 	 */
@@ -144,4 +144,4 @@ class CM_CLI_Theme{
 	}
 
 }
-WP_CLI::add_command( 'cm theme', 'CM_CLI_Theme');
+WP_CLI::add_command( 'cm create-theme', 'CM_CLI_Theme');

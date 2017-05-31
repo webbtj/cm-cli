@@ -39,7 +39,7 @@ class CM_CLI_Helper{
     	return "All Done! Good Work! You deserve " . $rewards[mt_rand(0,14)];
     }
 
-    public static function copy($source, $destination){
+    public static function copy($source, $destination, $vars = array()){
         global $chunker;
 
         $contents = file_get_contents($source);
@@ -48,7 +48,7 @@ class CM_CLI_Helper{
         if($basename === 'style.css' || $basename == 'translations.php'){
             $contents = CM_CLI_Helper::prepare_theme_meta($contents);
         }
-        $contents = $chunker->replacer($contents);
+        $contents = $chunker->replacer($contents, $vars);
         $contents = $chunker->chunk($source, $contents);
 
         file_put_contents($destination, $contents);

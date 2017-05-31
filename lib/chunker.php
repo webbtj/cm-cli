@@ -30,7 +30,7 @@ class CM_CLI_Chunker{
         return array_key_exists(basename($source_file), $this->chunkables);
     }
 
-    public function replacer($contents){
+    public function replacer($contents, $vars = array()){
         global $theme_title;
         global $taxonomy_slug;
         global $taxonomy_label;
@@ -61,6 +61,10 @@ class CM_CLI_Chunker{
             '[[custom-page-template-name]]' => $custom_page_template_name,
             '[[custom-page-template-label]]' => $custom_page_template_label,
         );
+
+        if(!empty($vars)){
+            $replace = array_merge($replace, $vars);
+        }
 
         foreach($replace as $key => $value){
             $contents = str_replace($key, $value, $contents);
