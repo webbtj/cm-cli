@@ -3,7 +3,7 @@
 
 class CM_CLI_Theme{
 	/**
-	 * Sets up your theme for Smarty for WordPress
+	 * Create a C+M Smarty based WordPress theme
 	 *
 	 * ## OPTIONS
 	 *

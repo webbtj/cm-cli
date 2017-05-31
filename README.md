@@ -92,7 +92,7 @@ NAME
 
 DESCRIPTION
 
-  Register a Menu in your C+M Smarty theme
+  Register a custom image size in your C+M Smarty theme
 
 SYNOPSIS
 
@@ -124,7 +124,7 @@ NAME
 
 DESCRIPTION
 
-  Add a custom page template to your theme
+  Add a custom local config to your site
 
 SYNOPSIS
 
@@ -262,7 +262,7 @@ NAME
 
 DESCRIPTION
 
-  Add a custom page template to your theme
+  Add a custom page template to your C+M Smarty theme
 
 SYNOPSIS
 
@@ -292,7 +292,7 @@ NAME
 
 DESCRIPTION
 
-  Sets up your theme for Smarty for WordPress
+  Create a C+M Smarty based WordPress theme
 
 SYNOPSIS
 

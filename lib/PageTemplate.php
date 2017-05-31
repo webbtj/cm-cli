@@ -2,7 +2,7 @@
 
 class CM_CLI_PageTemplate{
 	/**
-	 * Add a custom page template to your theme
+	 * Add a custom page template to your C+M Smarty theme
 	 *
 	 * ## OPTIONS
 	 *

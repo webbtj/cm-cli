@@ -1,7 +1,7 @@
 <?php
 class CM_CLI_LocalConfig{
 	/**
-	 * Add a custom page template to your theme
+	 * Add a custom local config to your site
 	 *
 	 * ## OPTIONS
 	 *

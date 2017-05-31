@@ -2,7 +2,7 @@
 
 class CM_CLI_ImageSize{
 	/**
-	 * Register a Menu in your C+M Smarty theme
+	 * Register a custom image size in your C+M Smarty theme
 	 *
 	 * ## OPTIONS
 	 *
