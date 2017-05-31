@@ -15,4 +15,5 @@ require_once('lib/Menu.php');
 require_once('lib/ImageSize.php');
 require_once('lib/PageTemplate.php');
 require_once('lib/LocalConfig.php');
+require_once('lib/CoreConfig.php');
 require_once('lib/Theme.php');

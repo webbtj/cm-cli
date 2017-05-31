@@ -83,7 +83,7 @@ class CM_CLI_LocalConfig{
 		eval($eval_lines);
 
 		//create db and user if necessary
-		$this->sql_commands($assoc_args);
+		CM_CLI_Helper::create_db_user($assoc_args);
 
 		//write the wp-config file.
         file_put_contents(ABSPATH . '/wp-config.php', $lines);
@@ -92,45 +92,8 @@ class CM_CLI_LocalConfig{
         $source = dirname(dirname(__FILE__)) . '/wp-config-local/wp-config-local.php';
         $destination = ABSPATH . '/wp-config-local.php';
         CM_CLI_Helper::copy($source, $destination, $vars);
-	}
 
-	public function sql_commands($assoc_args){
-		$database = null; $username = null; $password = ''; $connection_from = null;
-		if($assoc_args['db-name'] !== DB_NAME)
-			$database = $assoc_args['db-name'];
-		if($assoc_args['db-user'] !== DB_USER)
-			$username = $assoc_args['db-user'];
-		if($assoc_args['db-password'] !== DB_PASSWORD)
-			$password = $assoc_args['db-password'];
-		if($assoc_args['db-host'] !== 'localhost')
-			$connection_from = $assoc_args['db-host'];
-
-		if($database){
-			$connection = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
-	        if($connection->connect_error){
-	            throw new Exception("Error connecting to the DB as admin user: " . $connection->connect_error, 1);
-			}
-	        $connection->query("CREATE DATABASE IF NOT EXISTS $database");
-	        if($connection->error)
-	            throw new Exception("MySQL Error: " . $connection->error, 1);
-
-			if($username){
-		        if($connection_from){
-		            $connection->query("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'$connection_from' IDENTIFIED BY '$password' ");
-		            if($connection->error)
-		                throw new Exception("MySQL Error: " . $connection->error, 1);
-		        }else{
-		            $connection->query("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'%' IDENTIFIED BY '$password' ");
-		            if($connection->error)
-		                throw new Exception("MySQL Error: " . $connection->error, 1);
-		            $connection->query("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'localhost' IDENTIFIED BY '$password' ");
-		            if($connection->error)
-		                throw new Exception("MySQL Error: " . $connection->error, 1);
-		        }
-			}
-
-			$connection->close();
-		}
+		WP_CLI::success( "Generated 'wp-config-local.php' file. Updated 'wp-config.php' file." );
 	}
 
 }
