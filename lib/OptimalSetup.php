@@ -28,12 +28,12 @@ class CM_CLI_OptimalSetup{
         $destination = ABSPATH;
 
         if(!isset($assoc_args['skip-gitignore'])){
-            CM_CLI_Helper::copy("$source/gitignore", "$destination/.gitignore");
+            CM_CLI_Helper::copy("$source/optimal-setup/gitignore", "$destination/.gitignore");
             $messages[] = '.gitignore copied';
         }
 
         if(!isset($assoc_args['skip-htaccess'])){
-            CM_CLI_Helper::copy("$source/htaccess", "$destination/.htaccess");
+            CM_CLI_Helper::copy("$source/optimal-setup/htaccess", "$destination/.htaccess");
             $messages[] = '.htaccess copied';
         }
 

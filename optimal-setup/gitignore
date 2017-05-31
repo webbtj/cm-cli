@@ -1,6 +1,8 @@
 .DS_Store
 .sass-cache
 wp-config-local.php
+wp-config.local.php
+wp-local.php
 sitemap.xml
 sitemap.xml.gz
 wp-content/cache/
@@ -9,6 +11,6 @@ wp-content/upgrade/
 binford/
 node_modules
 bower_components
-vid/
-
+assets/node_modules
+assets/bower_components
 npm-debug.log
