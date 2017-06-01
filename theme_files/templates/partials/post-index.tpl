@@ -13,6 +13,8 @@
 
             <!-- excerpt -->
             <p>{$post->excerpt}</p>
+            <!-- all available fields FYI -->
+            {$post->fields|pre}
             <hr>
         </div>
 

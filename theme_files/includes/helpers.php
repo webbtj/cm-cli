@@ -166,7 +166,27 @@ function parse_youtube_url_embed($url){
 
 function format_post_for_display(&$p){
     $p->url = get_permalink($p->ID);
+    $p->fields = get_acf_fields($p->ID);
     switch ($p->post_type) {
         //--Format Post
     }
+}
+
+function get_acf_fields($p = null){
+    if(!function_exists('get_fields'))
+        return false;
+    if(!$p){
+        global $post;
+        $p = $post;
+    }
+    $fields = get_fields($p->ID);
+    $fields = apply_filters('cm/get_acf_fields', $fields);
+
+    return $fields;
+}
+
+function pre($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
 }
