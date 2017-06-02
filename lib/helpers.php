@@ -140,4 +140,15 @@ class CM_CLI_Helper{
             WP_CLI::success( "Database '$database' and User '$username' now exist (were created if required)" );
         }
 	}
+
+    public static function delete_directory($path){
+        if(is_dir($path)){
+            foreach(glob("{$path}/*") as $file){
+                CM_CLI_Helper::delete_directory($file);
+            }
+            rmdir($path);
+        }else{
+            unlink($path);
+        }
+    }
 }

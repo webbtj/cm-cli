@@ -15,7 +15,7 @@ wp cm create-post <slug> [--label=<label>] [--textdomain=<textdomain>] [--dashic
 wp cm create-taxonomy <slug> [--label=<label>] [--textdomain=<textdomain>] [--post-types=<post-types>] [--hierarchical] [--hierarchy] [--hierarch] [--hier]
 wp cm create-template <slug> [--label=<label>]
 wp cm create-theme <directory-name> [--theme-title=<theme-title>] [--theme-uri=<theme-uri>] [--author-name=<author-name>] [--author-uri=<author-uri>] [--theme-description=<theme-description>] [--theme-version=<theme-version>] [--activate]
-wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--keep-xmlrpc]
+wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--skip-default-themes] [--keep-xmlrpc]
 ```
 
 ### Core Config
@@ -356,11 +356,11 @@ NAME
 
 DESCRIPTION
 
-  Setup some ideal environment settings, such as gitignore, htaccess, and xmlrpc
+  Setup some ideal environment settings, such as gitignore, htaccess, disable xmlrpc, delete default themes.
 
 SYNOPSIS
 
-  wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--keep-xmlrpc]
+  wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--skip-default-themes] [--keep-xmlrpc]
 
 OPTIONS
 
@@ -369,6 +369,9 @@ OPTIONS
 
   [--skip-htaccess]
     Don't both with htaccess
+
+  [--skip-default-themes]
+    Don't delete default WP themes
 
   [--keep-xmlrpc]
     Don't disable XMLRPC (XMLRPC gets disabled because it is rarely used and
