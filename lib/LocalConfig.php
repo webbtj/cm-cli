@@ -60,17 +60,18 @@ class CM_CLI_LocalConfig{
             while(!feof($file)){
                 $line = fgets($file);
 				//blank out db creds in wp-config.php
+				$modified_line = $line;
 				$blank_creds = array('DB_NAME', 'DB_USER', 'DB_PASSWORD');
 				foreach($blank_creds as $blank_cred){
 					if(strpos($line, "define( '$blank_cred'") !== false){
-						$line = "	define( '$blank_cred', '' );";
+						$modified_line = "define( '$blank_cred', '' );";
 					}
 				}
 				//
-                $lines[] = str_repeat("\t", $tab) . $line;
+                $lines[] = str_repeat("\t", $tab) . $modified_line;
                 if(strpos($line, '// ** MySQL settings ** //') !== false){
-                    $lines[] = "if(file_exists('wp-config-local.php')){\n";
-                    $lines[] = "\trequire_once('wp-config-local.php');\n";
+                    $lines[] = "if(file_exists(dirname(__FILE__) . '/wp-config-local.php')){\n";
+                    $lines[] = "\trequire_once(dirname(__FILE__) . '/wp-config-local.php');\n";
                     $lines[] = "}else{\n";
                     $tab = 1;
                 }
