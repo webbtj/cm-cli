@@ -8,7 +8,7 @@ global $post, $wp_query;
 $smarty = wp_smarty();
 
 $title = wp_title('', false);
-$title = str_replace('Search Results', _x('Search Results', 'Theme', 'CFNU') . ':', $title);
+$title = str_replace('Search Results', _x('Search Results', 'Theme', '[[theme-title]]') . ':', $title);
 
 $smarty->assign('title', $title);
 
@@ -21,6 +21,9 @@ while(have_posts()){
 }
 
 $smarty->assign('posts', $output);
+
+$fields = get_acf_fields();
+$smarty->assign('fields', $fields);
 
 get_header();
 

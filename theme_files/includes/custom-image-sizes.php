@@ -1,7 +1,7 @@
 <?php
 // Custom Image Sizes
-add_action( 'after_setup_theme', 'cfnu_custom_image_sizes' );
-function cfnu_custom_image_sizes() {
+add_action( 'after_setup_theme', 'cm_custom_image_sizes' );
+function cm_custom_image_sizes() {
     //--Image Sizes
     add_image_size('1920x1080',     1920,   1080,   true );
     add_image_size('1920x1282',     1920,   1282,   true );

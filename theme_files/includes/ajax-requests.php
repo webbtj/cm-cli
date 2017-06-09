@@ -23,7 +23,7 @@ function load_posts_output(){
     }
 
     if($_GET['year']){
-        if($type == 'cfnu_event'){
+        if(strpos($type, 'event') !== false){
             $date_query = $_GET['year'];
             if($_GET['month']){
                 $date_query .= '-' . str_pad($_GET['month'], 2, '0', STR_PAD_LEFT);

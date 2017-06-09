@@ -2,9 +2,9 @@
 define('ASSET_VERSION', '0.0.1');
 define('WP_USE_THEMES', true);
 
-add_action('wp_enqueue_scripts', 'cfnu_add_stylesheets');
+add_action('wp_enqueue_scripts', 'cm_add_stylesheets');
 
-function cfnu_add_stylesheets() {
+function cm_add_stylesheets() {
 
     wp_enqueue_style('font-awesome.min', '/mockup/assets/vendor/font-awesome.min.css', array(), ASSET_VERSION , 'all');
     wp_enqueue_style('ionicons.min', '/mockup/assets/vendor/ionicons.min.css', array(), ASSET_VERSION , 'all');
@@ -15,9 +15,9 @@ function cfnu_add_stylesheets() {
     wp_enqueue_style('dev', get_template_directory_uri() . '/assets/css/dev.css', array(), ASSET_VERSION , 'all');
 
 }
-add_action('wp_enqueue_scripts', 'cfnu_add_javascripts');
+add_action('wp_enqueue_scripts', 'cm_add_javascripts');
 
-function cfnu_add_javascripts(){
+function cm_add_javascripts(){
 	wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), ASSET_VERSION, true);
 
 }

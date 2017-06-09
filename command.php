@@ -17,4 +17,5 @@ require_once('lib/PageTemplate.php');
 require_once('lib/LocalConfig.php');
 require_once('lib/CoreConfig.php');
 require_once('lib/OptimalSetup.php');
+require_once('lib/DummyContent.php');
 require_once('lib/Theme.php');

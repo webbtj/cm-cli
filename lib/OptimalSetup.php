@@ -30,9 +30,14 @@ class CM_CLI_OptimalSetup{
         $source = dirname(dirname(__FILE__));
         $destination = ABSPATH;
 
+		if(chmod("$destination/wp-content/uploads", 0777)){
+			$messages[] = 'uploads directory made writable';
+		}
+
         if(!isset($assoc_args['skip-gitignore'])){
             CM_CLI_Helper::copy("$source/optimal-setup/gitignore", "$destination/.gitignore");
-            $messages[] = '.gitignore copied';
+			CM_CLI_Helper::copy("$source/optimal-setup/wp-content/uploads/gitignore", "$destination/wp-content/uploads/.gitignore");
+            $messages[] = '.gitignore files copied';
         }
 
         if(!isset($assoc_args['skip-htaccess'])){
@@ -58,10 +63,11 @@ class CM_CLI_OptimalSetup{
         }
 
         if(!isset($assoc_args['keep-xmlrpc'])){
-            if(chmod("$destination/xmlrpc.php", 0000)){
-                $messages[] = 'xmlrpc disabled';
+            // if(chmod("$destination/xmlrpc.php", 0000)){ // changing this to delete instead of chmod because git
+			if(unlink("$destination/xmlrpc.php")){
+                $messages[] = 'xmlrpc deleted';
             }else{
-                WP_CLI::error( "Could not disable xmlrpc.php. You could manually delete it or chmod it to 000." );
+                WP_CLI::error( "Could not delete xmlrpc.php. You could manually delete it or chmod it to 000." );
             }
         }
 
