@@ -15,374 +15,491 @@ wp cm create-post <slug> [--label=<label>] [--textdomain=<textdomain>] [--dashic
 wp cm create-taxonomy <slug> [--label=<label>] [--textdomain=<textdomain>] [--post-types=<post-types>] [--hierarchical] [--hierarchy] [--hierarch] [--hier]
 wp cm create-template <slug> [--label=<label>]
 wp cm create-theme <directory-name> [--theme-title=<theme-title>] [--theme-uri=<theme-uri>] [--author-name=<author-name>] [--author-uri=<author-uri>] [--theme-description=<theme-description>] [--theme-version=<theme-version>] [--activate]
+wp cm dummy [--post-types=<post-types>] [--quantity=<quantity>] [--hour-change=<hour-change>] [--day-change=<day-change>] [--month-change=<month-change>] [--year-change=<year-change>] [--taxonomies] [--index-pages] [--existing] [--downloads]
 wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--skip-default-themes] [--keep-xmlrpc]
 ```
 
 ### Core Config
-```
-NAME
+    ```
+    NAME
 
-  wp cm core config
+      wp cm core config
 
-DESCRIPTION
+    DESCRIPTION
 
-  Setup a WordPress site, create DB and user, create a local config file
+      Setup a WordPress site, create DB and user, create a local config file
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm core config <master_user> <master_password> [--db-name=<db-name>]
-  [--db-user=<db-user>] [--db-password=<db-password>] [--db-host=<db-host>]
-  [--db-charset=<db-charset>] [--db-collate=<db-collate>]
-  [--db-prefix=<db-prefix>]
+      wp cm core config <master_user> <master_password> [--db-name=<db-name>]
+      [--db-user=<db-user>] [--db-password=<db-password>] [--db-host=<db-host>]
+      [--db-charset=<db-charset>] [--db-collate=<db-collate>]
+      [--db-prefix=<db-prefix>]
 
-OPTIONS
+    OPTIONS
 
-  <master_user>
-    The master username, this is used to create the user and database
+      <master_user>
+        The master username, this is used to create the user and database
 
-  <master_password>
-    The master password, this is used to create the user and database
+      <master_password>
+        The master password, this is used to create the user and database
 
-  [--db-name=<db-name>]
-    The database name
-    ---
-    default: "wordpress"
+      [--db-name=<db-name>]
+        The database name
+        ---
+        default: "wordpress"
 
-  [--db-user=<db-user>]
-    The database user name
-    ---
-    default: "root"
+      [--db-user=<db-user>]
+        The database user name
+        ---
+        default: "root"
 
-  [--db-password=<db-password>]
-    The database user password, if left blank, a random one will be generated
-    ---
-    default: ""
+      [--db-password=<db-password>]
+        The database user password, if left blank, a random one will be generated
+        ---
+        default: ""
 
-  [--db-host=<db-host>]
-    The database host
-    ---
-    default: "localhost"
+      [--db-host=<db-host>]
+        The database host
+        ---
+        default: "localhost"
 
-  [--db-charset=<db-charset>]
-    The database charset
-    ---
-    default: "utf8"
+      [--db-charset=<db-charset>]
+        The database charset
+        ---
+        default: "utf8"
 
-  [--db-collate=<db-collate>]
-    The database collate type
-    ---
-    default: ""
+      [--db-collate=<db-collate>]
+        The database collate type
+        ---
+        default: ""
 
-  [--db-prefix=<db-prefix>]
-    The database prefix, if left blank a random one will be generated
-    ---
-    default: ""
+      [--db-prefix=<db-prefix>]
+        The database prefix, if left blank a random one will be generated
+        ---
+        default: ""
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-local-config --db-name="wordpress" --db-user="wordpress_user"
-  --db-password="wordpress_pass"
-```
+        wp cm create-local-config --db-name="wordpress" --db-user="wordpress_user"
+      --db-password="wordpress_pass"
+    ```
 
 ### Create Image Size
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-image-size
+      wp cm create-image-size
 
-DESCRIPTION
+    DESCRIPTION
 
-  Register a custom image size in your C+M Smarty theme
+      Register a custom image size in your C+M Smarty theme
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-image-size <width> [--height=<height>] [--scale]
+      wp cm create-image-size <width> [--height=<height>] [--scale]
 
-OPTIONS
+    OPTIONS
 
-  <width>
-    The width
+      <width>
+        The width
 
-  [--height=<height>]
-    The height
-    ---
-    default: 0
+      [--height=<height>]
+        The height
+        ---
+        default: 0
 
-  [--scale]
-    Use this to scale instead of crop, crop is the default
+      [--scale]
+        Use this to scale instead of crop, crop is the default
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-menu main "Main Menu"
-```
+        wp cm create-image-size 1200 --height=600 --scale
+    ```
 
 ### Create Local Config
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-local-config
+      wp cm create-local-config
 
-DESCRIPTION
+    DESCRIPTION
 
-  Add a custom local config to your site
+      Add a custom local config to your site
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-local-config [--db-name=<db-name>] [--db-user=<db-user>]
-  [--db-password=<db-password>] [--db-host=<db-host>] [--db-charset=<db-charset>]
-  [--db-collate=<db-collate>]
+      wp cm create-local-config [--db-name=<db-name>] [--db-user=<db-user>]
+      [--db-password=<db-password>] [--db-host=<db-host>] [--db-charset=<db-charset>]
+      [--db-collate=<db-collate>]
 
-OPTIONS
+    OPTIONS
 
-  [--db-name=<db-name>]
-    The database name
-    ---
-    default: "wordpress"
+      [--db-name=<db-name>]
+        The database name
+        ---
+        default: "wordpress"
 
-  [--db-user=<db-user>]
-    The database user name
-    ---
-    default: "root"
+      [--db-user=<db-user>]
+        The database user name
+        ---
+        default: "root"
 
-  [--db-password=<db-password>]
-    The database user password
-    ---
-    default: ""
+      [--db-password=<db-password>]
+        The database user password
+        ---
+        default: ""
 
-  [--db-host=<db-host>]
-    The database host
-    ---
-    default: "localhost"
+      [--db-host=<db-host>]
+        The database host
+        ---
+        default: "localhost"
 
-  [--db-charset=<db-charset>]
-    The database charset
-    ---
-    default: "utf8"
+      [--db-charset=<db-charset>]
+        The database charset
+        ---
+        default: "utf8"
 
-  [--db-collate=<db-collate>]
-    The database collate type
-    ---
-    default: ""
-
-EXAMPLES
-
-    wp cm create-local-config --db-name="wordpress" --db-user="wordpress_user"
-  --db-password="wordpress_pass"
-```
+      [--db-collate=<db-collate>]
+        The database collate type
+        ---
+        default: ""
+    ```
 
 ### Create Menu
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-menu
+      wp cm create-menu
 
-DESCRIPTION
+    DESCRIPTION
 
-  Register a Menu in your C+M Smarty theme
+      Register a Menu in your C+M Smarty theme
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-menu <slug> <name>
+      wp cm create-menu <slug> <name>
 
-OPTIONS
+    OPTIONS
 
-  <slug>
-    The menu slug
+      <slug>
+        The menu slug
 
-  <name>
-    The menu name
+      <name>
+        The menu name
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-menu main "Main Menu"
-```
+        wp cm create-menu main "Main Menu"
+    ```
+
+### Create Post
+    ```
+    NAME
+
+      wp cm create-post
+
+    DESCRIPTION
+
+      Register a Post in your C+M Smarty theme
+
+    SYNOPSIS
+
+      wp cm create-post <slug> [--label=<label>] [--textdomain=<textdomain>]
+      [--dashicon=<dashicon>]
+
+    OPTIONS
+
+      <slug>
+        The post type slug
+
+      [--label=<label>]
+        The post type label
+        ---
+        default: "Custom Post"
+
+      [--textdomain=<textdomain>]
+        The textdomain of the post type
+        ---
+        default: null
+
+      [--dashicon=<dashicon>]
+        The dashicon of the post type
+        ---
+        default: "admin-post"
+
+    EXAMPLES
+
+        wp cm create-post event --label="Event"
+    ```
 
 ### Create Taxonomy
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-taxonomy
+      wp cm create-taxonomy
 
-DESCRIPTION
+    DESCRIPTION
 
-  Register a Taxonomy in your C+M Smarty theme
+      Register a Taxonomy in your C+M Smarty theme
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-taxonomy <slug> [--label=<label>] [--textdomain=<textdomain>]
-  [--post-types=<post-types>] [--hierarchical] [--hierarchy] [--hierarch]
-  [--hier]
+      wp cm create-taxonomy <slug> [--label=<label>] [--textdomain=<textdomain>]
+      [--post-types=<post-types>] [--hierarchical] [--hierarchy] [--hierarch]
+      [--hier]
 
-OPTIONS
+    OPTIONS
 
-  <slug>
-    The taxonomy slug
+      <slug>
+        The taxonomy slug
 
-  [--label=<label>]
-    The taxonomy label
-    ---
-    default: "Tag"
+      [--label=<label>]
+        The taxonomy label
+        ---
+        default: "Tag"
 
-  [--textdomain=<textdomain>]
-    The textdomain of the post type
-    ---
-    default: null
+      [--textdomain=<textdomain>]
+        The textdomain of the post type
+        ---
+        default: null
 
-  [--post-types=<post-types>]
-    The taxnomy post type(s)
-    ---
-    default: "post"
+      [--post-types=<post-types>]
+        The taxnomy post type(s)
+        ---
+        default: "post"
 
-  [--hierarchical]
-    Whether or not the taxonomy is hierarchical
-    ---
+      [--hierarchical]
+        Whether or not the taxonomy is hierarchical
+        ---
 
-  [--hierarchy]
-    Alias of hierarchical
-    ---
+      [--hierarchy]
+        Alias of hierarchical
+        ---
 
-  [--hierarch]
-    Alias of hierarchical
-    ---
+      [--hierarch]
+        Alias of hierarchical
+        ---
 
-  [--hier]
-    Alias of hierarchical
-    ---
+      [--hier]
+        Alias of hierarchical
+        ---
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-taxonomy event_tag --label="Tag" --post_types="event"
-```
+        wp cm create-taxonomy event_tag --label="Tag" --post_types="event"
+    ```
 
 ### Create Template
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-template
+      wp cm create-template
 
-DESCRIPTION
+    DESCRIPTION
 
-  Add a custom page template to your C+M Smarty theme
+      Add a custom page template to your C+M Smarty theme
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-template <slug> [--label=<label>]
+      wp cm create-template <slug> [--label=<label>]
 
-OPTIONS
+    OPTIONS
 
-  <slug>
-    The machine name of the page template
+      <slug>
+        The machine name of the page template
 
-  [--label=<label>]
-    The label of the page template
-    ---
-    default: "Custom Page Template"
+      [--label=<label>]
+        The label of the page template
+        ---
+        default: "Custom Page Template"
 
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-template about --label="About Template"
-```
+        wp cm create-template about --label="About Template"
+    ```
 
 ### Create Theme
-```
-NAME
+    ```
+    NAME
 
-  wp cm create-theme
+      wp cm create-theme
 
-DESCRIPTION
+    DESCRIPTION
 
-  Create a C+M Smarty based WordPress theme
+      Create a C+M Smarty based WordPress theme
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm create-theme <directory-name> [--theme-title=<theme-title>]
-  [--theme-uri=<theme-uri>] [--author-name=<author-name>]
-  [--author-uri=<author-uri>] [--theme-description=<theme-description>]
-  [--theme-version=<theme-version>] [--activate]
+      wp cm create-theme <directory-name> [--theme-title=<theme-title>]
+      [--theme-uri=<theme-uri>] [--author-name=<author-name>]
+      [--author-uri=<author-uri>] [--theme-description=<theme-description>]
+      [--theme-version=<theme-version>] [--activate]
 
-OPTIONS
+    OPTIONS
 
-  <directory-name>
-    The theme to set up.
+      <directory-name>
+        The theme to set up.
 
-  [--theme-title=<theme-title>]
-    The title of the theme
-    ---
-    default: C+M Smarty Scaffold
+      [--theme-title=<theme-title>]
+        The title of the theme
+        ---
+        default: C+M Smarty Scaffold
 
-  [--theme-uri=<theme-uri>]
-    The uri of the theme
-    ---
-    default: http://sitebynorex.com
+      [--theme-uri=<theme-uri>]
+        The uri of the theme
+        ---
+        default: http://sitebynorex.com
 
-  [--author-name=<author-name>]
-    The name of the Author
-    ---
-    default: C+M
+      [--author-name=<author-name>]
+        The name of the Author
+        ---
+        default: C+M
 
-  [--author-uri=<author-uri>]
-    The author URI
-    ---
-    default: http://sitebynorex.com
+      [--author-uri=<author-uri>]
+        The author URI
+        ---
+        default: http://sitebynorex.com
 
-  [--theme-description=<theme-description>]
-    The theme description
-    ---
-    default: Smarty Scaffolded Theme by C+M
+      [--theme-description=<theme-description>]
+        The theme description
+        ---
+        default: Smarty Scaffolded Theme by C+M
 
-  [--theme-version=<theme-version>]
-    The version of the theme
-    ---
-    default: 1.0
+      [--theme-version=<theme-version>]
+        The version of the theme
+        ---
+        default: 1.0
 
-  [--activate]
-    Whether or not to activate the theme
-    ---
-    default: false
+      [--activate]
+        Whether or not to activate the theme
+        ---
+        default: false
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm create-theme my_theme --theme-title="My Theme"
-  --theme-uri="http://sitebynorex.com" --author-name="Norex"
-  --author-uri="http://sitebynorex.com" --theme-description="A custom theme for a client"
-```
+        wp cm create-theme my_theme --theme-title="My Theme"
+      --theme-uri="http://sitebynorex.com" --author-name="Norex"
+      --author-uri="http://sitebynorex.com" --theme-description="A custom theme for a client"
+    ```
+
+### Dummy Content
+    ```
+    NAME
+
+      wp cm dummy
+
+    DESCRIPTION
+
+      Setup some ideal environment settings, such as gitignore, htaccess, disable xmlrpc, delete default themes.
+
+    SYNOPSIS
+
+      wp cm dummy [--post-types=<post-types>] [--quantity=<quantity>]
+      [--hour-change=<hour-change>] [--day-change=<day-change>]
+      [--month-change=<month-change>] [--year-change=<year-change>] [--taxonomies]
+      [--index-pages] [--existing] [--downloads]
+
+    OPTIONS
+
+      [--post-types=<post-types>]
+        Which post-types to create content for, if none, use all
+        ---
+        default: ""
+
+      [--quantity=<quantity>]
+        How many (of each post type) to create
+        ---
+        default: 10
+
+      [--hour-change=<hour-change>]
+        How many hours apart to set each post (on a per-post-type basis). First
+        post is created
+        now, each subsequent post is created X hours earlier
+        ---
+        default: 6
+
+      [--day-change=<day-change>]
+        How many days apart to set each post (on a per-post-type basis). First post
+        is created
+        now, each subsequent post is created X days earlier
+        ---
+        default: ""
+
+      [--month-change=<month-change>]
+        How many months apart to set each post (on a per-post-type basis). First
+        post is created
+        now, each subsequent post is created X months earlier
+        ---
+        default: ""
+
+      [--year-change=<year-change>]
+        How many years apart to set each post (on a per-post-type basis). First
+        post is created
+        now, each subsequent post is created X years earlier
+        ---
+        default: ""
+
+      [--taxonomies]
+        Whether or not to create any new taxonomies, use --no-taxonomies to prevent
+        from
+        creating new taxonomies
+
+      [--index-pages]
+        Add this to create index pages for each of the post types
+
+      [--existing]
+        Add this to fill/reset post meta on existing content instead of creating
+
+      [--downloads]
+        Whether or not to download sample images from unsplash. Use --no-downloads
+        to prevent
+        images from being downloaded from unsplash. Note, if no images exist a
+        remote one will
+        still be downloaded.
+
+    EXAMPLES
+
+        wp cm dummy
+    ```
 
 ### Optimal Setup
-```
-NAME
+    ```
+    NAME
 
-  wp cm optimal-setup
+      wp cm optimal-setup
 
-DESCRIPTION
+    DESCRIPTION
 
-  Setup some ideal environment settings, such as gitignore, htaccess, disable xmlrpc, delete default themes.
+      Setup some ideal environment settings, such as gitignore, htaccess, disable xmlrpc, delete default themes.
 
-SYNOPSIS
+    SYNOPSIS
 
-  wp cm optimal-setup [--skip-gitignore] [--skip-htaccess] [--skip-default-themes] [--keep-xmlrpc]
+      wp cm optimal-setup [--skip-gitignore] [--skip-htaccess]
+      [--skip-default-themes] [--keep-xmlrpc]
 
-OPTIONS
+    OPTIONS
 
-  [--skip-gitignore]
-    Don't bother with gitignore file
+      [--skip-gitignore]
+        Don't bother with gitignore file
 
-  [--skip-htaccess]
-    Don't both with htaccess
+      [--skip-htaccess]
+        Don't both with htaccess
 
-  [--skip-default-themes]
-    Don't delete default WP themes
+      [--skip-default-themes]
+        Don't delete default WP themes
 
-  [--keep-xmlrpc]
-    Don't disable XMLRPC (XMLRPC gets disabled because it is rarely used and
-    often the
-    source of security issues)
+      [--keep-xmlrpc]
+        Don't disable XMLRPC (XMLRPC gets disabled because it is rarely used and
+        often the
+        source of security issues)
 
 
-EXAMPLES
+    EXAMPLES
 
-    wp cm optimal-setup
-```
+        wp cm optimal-setup
+    ```
 
 
 ## Installing

@@ -303,6 +303,10 @@ class ContentHelper{
     }
 
     public static function get_file($post_id, $new_file_likelihood = 10){
+        global $downloads_enabled;
+        if(!$downloads_enabled){
+            $new_file_likelihood = 0;
+        }
         if(rand(1, 100) <= 100 - $new_file_likelihood){
             $args = array('post_type' => 'attachment', 'posts_per_page' => 1, 'orderby' => 'rand',);
             $posts = get_posts($args);

@@ -27,6 +27,9 @@ class CM_CLI_PageTemplate{
 
 		$name = $args[0];
 		$label = $assoc_args['label'];
+		if($label === 'Custom Page Template'){
+			$label = ucwords(str_replace('-', ' ', $name)) . ' Page';
+		}
 
         global $custom_page_template_name;
         global $custom_page_template_label;
@@ -42,10 +45,9 @@ class CM_CLI_PageTemplate{
         if(CM_CLI_Helper::active_theme_dir()){
             $destination = CM_CLI_Helper::active_theme_dir();
             $source = dirname(dirname(__FILE__)) . '/custom-page-template';
-            print_r([$name, $label, $source, $destination]);
             CM_CLI_Helper::copy("$source/page--custom.php", "$destination/page-$name.php");
             CM_CLI_Helper::copy("$source/page--custom.tpl", "$destination/templates/pages/page-$name.tpl");
-
+			WP_CLI::success( "Page template \"$label\" was created (page-$name.php)." );
         }
 	}
 

@@ -19,7 +19,7 @@ class CM_CLI_ImageSize{
      *
 	 * ## EXAMPLES
 	 *
-	 *     wp cm create-menu main "Main Menu"
+	 *     wp cm create-image-size 1200 --height=600 --scale
 	 *
 	 * @when before_wp_load
 	 */

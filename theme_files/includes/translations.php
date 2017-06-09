@@ -24,26 +24,26 @@ function cm_assign_translations(&$smarty){
 }
 
 function cm_translate_date($date){
-    $date = str_ireplace('January', __('January', 'CFNU'), $date);
-    $date = str_ireplace('February', __('February', 'CFNU'), $date);
-    $date = str_ireplace('March', __('March', 'CFNU'), $date);
-    $date = str_ireplace('April', __('April', 'CFNU'), $date);
-    $date = str_ireplace('May', __('May', 'CFNU'), $date);
-    $date = str_ireplace('June', __('June', 'CFNU'), $date);
-    $date = str_ireplace('July', __('July', 'CFNU'), $date);
-    $date = str_ireplace('August', __('August', 'CFNU'), $date);
-    $date = str_ireplace('September', __('September', 'CFNU'), $date);
-    $date = str_ireplace('October', __('October', 'CFNU'), $date);
-    $date = str_ireplace('November', __('November', 'CFNU'), $date);
-    $date = str_ireplace('December', __('December', 'CFNU'), $date);
+    $date = str_ireplace('January', __('January', '[[theme-title]]'), $date);
+    $date = str_ireplace('February', __('February', '[[theme-title]]'), $date);
+    $date = str_ireplace('March', __('March', '[[theme-title]]'), $date);
+    $date = str_ireplace('April', __('April', '[[theme-title]]'), $date);
+    $date = str_ireplace('May', __('May', '[[theme-title]]'), $date);
+    $date = str_ireplace('June', __('June', '[[theme-title]]'), $date);
+    $date = str_ireplace('July', __('July', '[[theme-title]]'), $date);
+    $date = str_ireplace('August', __('August', '[[theme-title]]'), $date);
+    $date = str_ireplace('September', __('September', '[[theme-title]]'), $date);
+    $date = str_ireplace('October', __('October', '[[theme-title]]'), $date);
+    $date = str_ireplace('November', __('November', '[[theme-title]]'), $date);
+    $date = str_ireplace('December', __('December', '[[theme-title]]'), $date);
 
-    $date = str_ireplace('Sunday', __('Sunday', 'CFNU'), $date);
-    $date = str_ireplace('Monday', __('Monday', 'CFNU'), $date);
-    $date = str_ireplace('Tuesday', __('Tuesday', 'CFNU'), $date);
-    $date = str_ireplace('Wednesday', __('Wednesday', 'CFNU'), $date);
-    $date = str_ireplace('Thursday', __('Thursday', 'CFNU'), $date);
-    $date = str_ireplace('Friday', __('Friday', 'CFNU'), $date);
-    $date = str_ireplace('Saturday', __('Saturday', 'CFNU'), $date);
+    $date = str_ireplace('Sunday', __('Sunday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Monday', __('Monday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Tuesday', __('Tuesday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Wednesday', __('Wednesday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Thursday', __('Thursday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Friday', __('Friday', '[[theme-title]]'), $date);
+    $date = str_ireplace('Saturday', __('Saturday', '[[theme-title]]'), $date);
 
     return $date;
 }
