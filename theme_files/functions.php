@@ -1,6 +1,7 @@
 <?php
 define('ASSET_VERSION', '0.0.1');
 define('WP_USE_THEMES', true);
+define('ASSETS_DIR', get_template_directory_uri() . '/assets/');
 
 add_action('wp_enqueue_scripts', 'cm_add_stylesheets');
 
@@ -36,6 +37,7 @@ function wp_smarty(){
 
     $stylesheet_directory = get_bloginfo('stylesheet_directory');
     $wp_smarty->assign('stylesheet_directory', $stylesheet_directory);
+    $wp_smarty->assign('assets_dir', ASSETS_DIR);
 
     //Load Menus
     cm_load_menus($wp_smarty);
