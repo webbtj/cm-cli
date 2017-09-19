@@ -1,8 +1,8 @@
 {
-    "name": "webbtj/cm-wpcli",
+    "name": "webbtj/cm-cli",
     "description": "",
     "type": "wp-cli-package",
-    "homepage": "https://github.com/webbtj/cm-wpcli",
+    "homepage": "https://github.com/webbtj/cm-cli",
     "license": "MIT",
     "authors": [],
     "minimum-stability": "dev",
